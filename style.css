@@ -108,3 +108,38 @@ footer {
     50% { background-color: #48bb78; }
     100% { background-color: #667eea; }
 }
+
+
+
+/* 头部布局调整 */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* 当前时间样式 */
+.current-time {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+}
+
+/* 响应式调整 - 在手机屏幕上调整时间显示 */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .current-time {
+        order: -1; /* 在移动端将时间显示放在标题上面 */
+        align-self: flex-end;
+    }
+}
