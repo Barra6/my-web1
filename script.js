@@ -4,27 +4,28 @@ console.log('🚀 网站加载成功！');
 // 更新当前时间函数
 function updateCurrentTime() {
     const now = new Date();
-    
-    // 格式化为中文时间格式
-    const options = { 
-        year: 'numeric', 
-        month: '2-digit', 
+    // 格式化为您想要的时间字符串
+    const timeString = now.toLocaleString('zh-CN', { 
+        year: 'numeric',
+        month: '2-digit',
         day: '2-digit',
-        hour: '2-digit', 
-        minute: '2-digit', 
+        hour: '2-digit',
+        minute: '2-digit',
         second: '2-digit',
         hour12: false 
-    };
-    
-    const timeString = now.toLocaleDateString('zh-CN', options) + 
-                      ' 星期' + '日一二三四五六'.charAt(now.getDay());
-    
-    // 更新时间显示
+    }) + ' 星期' + '日一二三四五六'.charAt(now.getDay());
+
     const timeElement = document.getElementById('currentTime');
     if (timeElement) {
         timeElement.textContent = timeString;
     }
 }
+
+// 当页面加载完成后开始更新时间
+document.addEventListener('DOMContentLoaded', function() {
+    updateCurrentTime(); // 立即执行一次
+    setInterval(updateCurrentTime, 1000); // 每秒更新一次
+});
 
 // 交互功能
 function showMessage() {
