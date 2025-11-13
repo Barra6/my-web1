@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的第一个部署网站</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎉 欢迎来到我的网站！</h1>
+            <p>这是我成功部署的第一个网站</p>
+        </header>
+        
+        <main>
+            <section class="intro">
+                <h2>关于这个项目</h2>
+                <p>这个网站展示了如何从零开始部署GitHub公共仓库</p>
+                <div class="features">
+                    <div class="feature">
+                        <h3>✅ 步骤清晰</h3>
+                        <p>跟随指南一步步完成</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🚀 快速部署</h3>
+                        <p>几分钟内上线</p>
+                    </div>
+                    <div class="feature">
+                        <h3>💯 完全免费</h3>
+                        <p>使用GitHub Pages服务</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="deploy-steps">
+                <h2>部署状态</h2>
+                <div id="status">
+                    <p>🚀 网站已成功部署！</p>
+                    <button onclick="changeColor()">点击测试交互功能</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>部署时间: <span id="deploy-time"></span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
