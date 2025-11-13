@@ -143,3 +143,41 @@ footer {
         align-self: flex-end;
     }
 }
+
+
+
+/* 时间显示容器样式 */
+.time-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: right;
+}
+
+.current-time {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    font-family: Arial, sans-serif;
+}
+
+/* 确保header有相对定位，以便时间容器可以绝对定位 */
+header {
+    position: relative;
+    text-align: center;
+    padding-top: 20px; /* 为时间显示留出空间 */
+}
+
+/* 响应式调整 - 在手机屏幕上调整时间显示 */
+@media (max-width: 768px) {
+    .time-container {
+        position: static;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
