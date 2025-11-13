@@ -21,12 +21,6 @@ function updateCurrentTime() {
     }
 }
 
-// 当页面加载完成后开始更新时间
-document.addEventListener('DOMContentLoaded', function() {
-    updateCurrentTime(); // 立即执行一次
-    setInterval(updateCurrentTime, 1000); // 每秒更新一次
-});
-
 // 交互功能
 function showMessage() {
     const messageElement = document.getElementById('demo-message');
@@ -49,13 +43,7 @@ function showMessage() {
 }
 
 // 平滑滚动导航
-document.addEventListener('DOMContentLoaded', function() {
-    // 初始化时间显示
-    updateCurrentTime();
-    
-    // 每秒更新时间
-    setInterval(updateCurrentTime, 1000);
-    
+function setupSmoothScroll() {
     const navLinks = document.querySelectorAll('.nav a');
     
     navLinks.forEach(link => {
@@ -72,7 +60,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
-    // 显示加载完成时间
+}
+
+// 当页面加载完成后初始化所有功能
+document.addEventListener('DOMContentLoaded', function() {
     console.log('页面加载完成时间:', new Date().toLocaleString());
+    
+    // 初始化时间显示
+    updateCurrentTime();
+    
+    // 设置每秒更新一次时间
+    setInterval(updateCurrentTime, 1000);
+    
+    // 设置平滑滚动
+    setupSmoothScroll();
+    
+    console.log('时间自动更新已启动，每秒更新一次');
 });
